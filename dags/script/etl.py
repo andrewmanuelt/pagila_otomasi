@@ -23,6 +23,7 @@ def main():
     # 1a. Pada bagian transform load adalah proses transformasi dan loading ke skema dw
     # 1b. Lihat pada 'Latihan ETL Pagila.sql' terdapat query 'INSERT ... SELECT ...'
     # 2. Lengkapi setiap fungsi dibawah. Ganti 'pass' dengan kode yang seharusnya
+    # 3. Jangan lupa dibagian atas kode ditambahkan query 'TRUNCATE' untuk membersihkan dw
     transform_load()   
     
     # NOTE: INGAT YA JANGAN PAKAI AI APAPUN. BIASAKAN KETIK SENDIRI SUPAYA HAFAL DAN BELAJAR DENGAN BAIK.
@@ -31,6 +32,7 @@ def main():
 # ======================= connection =======================
 
 def connection(dbname):
+    # port dan host disesuaikan dengan konfigurasi dari Pagila yang digunakan beberapa minggu lalu
     dsn = f"host=localhost port=5433 user=postgres password=postgres dbname={dbname}"
     conn = psycopg2.connect(dsn, cursor_factory=RealDictCursor)
     cursor = conn.cursor()
